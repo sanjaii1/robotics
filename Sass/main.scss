@@ -1,3 +1,10 @@
 @use "./base/base";
+@use "./components/Header";
+@use "./components/Footer";
 @use "./page/Home/Components/VideoBanner";
+@use "./page/Home/Components/WhoWeAre";
+@use "./page/Home/Components/ProductsShowcase";
+@use "./page/Home/Components/RobotRentals";
+@use "./page/Home/Components/ClientTestimonials";
+@use "./page/Home/Components/NewsletterBanner";
 

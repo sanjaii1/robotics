@@ -1,0 +1,121 @@
+.header {
+  background: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  
+  .header-top-line {
+    height: 3px;
+    background: #0066cc;
+    width: 100%;
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo-section {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      
+      .logo-symbol {
+        display: flex;
+        gap: 0.5rem;
+        
+        .logo-line {
+          width: 20px;
+          height: 30px;
+          border: 3px solid #000;
+          border-bottom: none;
+          border-right: none;
+          position: relative;
+          
+          &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 15px;
+            height: 3px;
+            background: #000;
+          }
+        }
+      }
+      
+      .company-name {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+        
+        .fortune {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #000;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+        
+        .robotics {
+          font-size: 1.2rem;
+          font-weight: 400;
+          color: #666;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+      }
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    
+    .nav-link {
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #666;
+      transition: color 0.3s ease;
+      position: relative;
+      
+      &:hover {
+        color: #000;
+      }
+      
+      &.active {
+        color: #000;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .header {
+    .nav-container {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      
+      .nav-link {
+        font-size: 0.8rem;
+      }
+    }
+  }
+}

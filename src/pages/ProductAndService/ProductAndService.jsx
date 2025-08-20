@@ -1,8 +1,16 @@
+import React from 'react';
+import ProductVideoContainer from './Components/ProductVideoContainer.jsx';
+import ProductsGrid from './Components/ProductsGrid.jsx';
+import RobotRentals from './Components/RobotRentals.jsx';
+import CaseStudies from './Components/CaseStudies.jsx';
+
 export default function ProductAndService() {
   return (
     <main>
-      <h1>Product & Service</h1>
-      <p>Overview of our products and services.</p>
+      <ProductVideoContainer />
+      <ProductsGrid />
+      <RobotRentals />
+      <CaseStudies />
     </main>
   );
 }

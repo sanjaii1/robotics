@@ -1216,4 +1216,642 @@ a {
   pointer-events: none;
 }
 
+.product-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+.product-video-container .video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  min-width: 100%;
+  min-height: 100%;
+  will-change: transform;
+  background: #000;
+}
+.product-video-container .video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.product-video-container .video-overlay .content-wrapper {
+  text-align: center;
+  max-width: 800px;
+  padding: 0 2rem;
+  animation: fadeInUp 1s ease-out;
+}
+.product-video-container .video-overlay .content-wrapper .main-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+.product-video-container .video-overlay .content-wrapper .main-title .highlight {
+  color: #007bff;
+  display: block;
+  margin-top: 0.5rem;
+}
+@media (max-width: 768px) {
+  .product-video-container .video-overlay .content-wrapper .main-title {
+    font-size: 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .product-video-container .video-overlay .content-wrapper .main-title {
+    font-size: 2rem;
+  }
+}
+.product-video-container .video-overlay .content-wrapper .subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+@media (max-width: 768px) {
+  .product-video-container .video-overlay .content-wrapper .subtitle {
+    font-size: 1.1rem;
+  }
+}
+.product-video-container .video-overlay .content-wrapper .cta-buttons {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.product-video-container .video-overlay .content-wrapper .cta-buttons .btn {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.product-video-container .video-overlay .content-wrapper .cta-buttons .btn.btn-primary {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+}
+.product-video-container .video-overlay .content-wrapper .cta-buttons .btn.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+}
+.product-video-container .video-overlay .content-wrapper .cta-buttons .btn.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+}
+.product-video-container .video-overlay .content-wrapper .cta-buttons .btn.btn-secondary:hover {
+  background: white;
+  color: #000;
+  transform: translateY(-2px);
+}
+.product-video-container .sparkle {
+  position: absolute;
+  font-size: 1.5rem;
+  color: white;
+  z-index: 3;
+  animation: sparkle 2s ease-in-out infinite;
+}
+.product-video-container .sparkle.sparkle-1 {
+  top: 15%;
+  right: 20%;
+  animation-delay: 0s;
+}
+.product-video-container .sparkle.sparkle-2 {
+  top: 25%;
+  right: 15%;
+  animation-delay: 0.5s;
+}
+.product-video-container .sparkle.sparkle-3 {
+  bottom: 20%;
+  left: 15%;
+  animation-delay: 1s;
+}
+.product-video-container .sparkle.sparkle-4 {
+  bottom: 30%;
+  left: 25%;
+  animation-delay: 1.5s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+@media (max-width: 768px) {
+  .product-video-container {
+    height: 80vh;
+  }
+  .product-video-container .video-overlay .content-wrapper {
+    padding: 0 1rem;
+  }
+  .product-video-container .video-overlay .content-wrapper .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-video-container .video-overlay .content-wrapper .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+@media (max-width: 480px) {
+  .product-video-container {
+    height: 70vh;
+  }
+  .product-video-container .sparkle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Products Section Styles */
+.products-section {
+  padding: 4rem 2rem;
+  background: #f8f9fa;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.nav-button {
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.nav-button.primary {
+  background: #0066cc;
+  color: white;
+}
+
+.nav-button.primary:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+}
+
+.nav-button.secondary {
+  background: white;
+  color: #0066cc;
+  border: 2px solid #0066cc;
+}
+
+.nav-button.secondary:hover {
+  background: #0066cc;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.category-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.category-tag {
+  background: #0066cc;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.05);
+}
+
+.product-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.product-description {
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 14px;
+}
+
+.key-highlights {
+  margin-bottom: 2rem;
+}
+
+.highlights-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.highlights-list {
+  list-style: none;
+  padding: 0;
+}
+
+.highlight-item {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.highlight-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  background: #0066cc;
+  border-radius: 50%;
+}
+
+.cta-button {
+  width: 100%;
+  background: #0066cc;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* Responsive Design for Products */
+@media (max-width: 768px) {
+  .products-section {
+    padding: 2rem 1rem;
+  }
+  
+  .navigation-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .product-card {
+    padding: 1rem;
+  }
+  
+  .product-title {
+    font-size: 1.25rem;
+  }
+}
+
+/* Robot Rentals Section Styles */
+.robot-rentals-section {
+  padding: 4rem 2rem;
+  background: white;
+}
+
+.rentals-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.rentals-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rentals-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.rentals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Rental Button Styles */
+.cta-button.rental {
+  background: #0066cc;
+  color: white;
+}
+
+.cta-button.rental:hover {
+  background: #0052a3;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
+}
+
+/* Responsive Design for Rentals */
+@media (max-width: 768px) {
+  .robot-rentals-section {
+    padding: 2rem 1rem;
+  }
+  
+  .rentals-title {
+    font-size: 2rem;
+  }
+  
+  .rentals-subtitle {
+    font-size: 1rem;
+  }
+  
+  .rentals-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* Case Studies Section Styles */
+.case-studies-section {
+  display: flex;
+  align-items: center;
+  min-height: 600px;
+  background: linear-gradient(90deg, #008080 0%, #00CED1 100%);
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.case-studies-content {
+  flex: 1;
+  max-width: 600px;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.case-studies-title {
+  font-size: 3rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: 2px;
+}
+
+.case-studies-intro {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.case-studies-body {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.case-studies-conclusion {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.case-studies-cta {
+  background: white;
+  color: #0066cc;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.case-studies-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: #f8f9fa;
+}
+
+.case-studies-graphic {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.robotic-hand {
+  width: 400px;
+  height: 500px;
+  background: linear-gradient(135deg, #0066cc 0%, #0099ff 50%, #00ccff 100%);
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 
+    0 20px 40px rgba(0, 102, 204, 0.3),
+    inset 0 10px 20px rgba(255, 255, 255, 0.2);
+  animation: roboticHandGlow 3s ease-in-out infinite alternate;
+}
+
+.robotic-hand::before {
+  content: '';
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  width: 60%;
+  height: 60%;
+  background: linear-gradient(45deg, #004499 0%, #0066cc 50%, #0099ff 100%);
+  border-radius: 30px;
+  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.robotic-hand::after {
+  content: '';
+  position: absolute;
+  top: 35%;
+  left: 25%;
+  width: 50%;
+  height: 40%;
+  background: linear-gradient(135deg, #00ccff 0%, #66ddff 100%);
+  border-radius: 25px;
+  box-shadow: 
+    inset 0 3px 10px rgba(255, 255, 255, 0.4),
+    0 5px 15px rgba(0, 204, 255, 0.5);
+}
+
+@keyframes roboticHandGlow {
+  0% {
+    box-shadow: 
+      0 20px 40px rgba(0, 102, 204, 0.3),
+      inset 0 10px 20px rgba(255, 255, 255, 0.2),
+      0 0 20px rgba(0, 204, 255, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 20px 40px rgba(0, 102, 204, 0.4),
+      inset 0 10px 20px rgba(255, 255, 255, 0.3),
+      0 0 30px rgba(0, 204, 255, 0.6);
+  }
+}
+
+/* Responsive Design for Case Studies */
+@media (max-width: 1024px) {
+  .case-studies-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 3rem 1rem;
+  }
+  
+  .case-studies-content {
+    max-width: 100%;
+    margin-bottom: 3rem;
+  }
+  
+  .case-studies-title {
+    font-size: 2.5rem;
+  }
+  
+  .robotic-hand {
+    width: 300px;
+    height: 375px;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-studies-section {
+    padding: 2rem 1rem;
+  }
+  
+  .case-studies-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .case-studies-intro {
+    font-size: 1.1rem;
+  }
+  
+  .case-studies-body,
+  .case-studies-conclusion {
+    font-size: 0.95rem;
+  }
+  
+  .robotic-hand {
+    width: 250px;
+    height: 312px;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

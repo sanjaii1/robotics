@@ -1,0 +1,214 @@
+.product-video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  
+  // Video Background
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    // Ensure video covers the entire container
+    min-width: 100%;
+    min-height: 100%;
+    // Optimize video performance
+    will-change: transform;
+    // Fallback for older browsers
+    background: #000;
+  }
+  
+  // Video Overlay
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.7) 0%,
+      rgba(0, 0, 0, 0.5) 50%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .content-wrapper {
+      text-align: center;
+      max-width: 800px;
+      padding: 0 2rem;
+      animation: fadeInUp 1s ease-out;
+      
+      .main-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        
+        .highlight {
+          color: #007bff;
+          display: block;
+          margin-top: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+          font-size: 2.5rem;
+        }
+        
+        @media (max-width: 480px) {
+          font-size: 2rem;
+        }
+      }
+      
+      .subtitle {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2.5rem;
+        line-height: 1.6;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        
+        @media (max-width: 768px) {
+          font-size: 1.1rem;
+        }
+      }
+      
+      .cta-buttons {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        
+        .btn {
+          padding: 1rem 2rem;
+          font-size: 1.1rem;
+          font-weight: 600;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          
+          &.btn-primary {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+            
+            &:hover {
+              transform: translateY(-2px);
+              box-shadow: 0 6px 20px rgba(0, 123, 255, 0.6);
+            }
+          }
+          
+          &.btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            
+            &:hover {
+              background: white;
+              color: #000;
+              transform: translateY(-2px);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  // Sparkle Effects
+  .sparkle {
+    position: absolute;
+    font-size: 1.5rem;
+    color: white;
+    z-index: 3;
+    animation: sparkle 2s ease-in-out infinite;
+    
+    &.sparkle-1 {
+      top: 15%;
+      right: 20%;
+      animation-delay: 0s;
+    }
+    
+    &.sparkle-2 {
+      top: 25%;
+      right: 15%;
+      animation-delay: 0.5s;
+    }
+    
+    &.sparkle-3 {
+      bottom: 20%;
+      left: 15%;
+      animation-delay: 1s;
+    }
+    
+    &.sparkle-4 {
+      bottom: 30%;
+      left: 25%;
+      animation-delay: 1.5s;
+    }
+  }
+}
+
+// Animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2) rotate(180deg);
+  }
+}
+
+// Responsive Design
+@media (max-width: 768px) {
+  .product-video-container {
+    height: 80vh;
+    
+    .video-overlay .content-wrapper {
+      padding: 0 1rem;
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        
+        .btn {
+          width: 100%;
+          max-width: 300px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .product-video-container {
+    height: 70vh;
+    
+    .sparkle {
+      font-size: 1.2rem;
+    }
+  }
+}

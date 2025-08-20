@@ -1,6 +1,19 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
+import ContactModal from "./ContactModal.jsx";
 
 export default function Header() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const handleContactClick = (e) => {
+    e.preventDefault();
+    setIsContactModalOpen(true);
+  };
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+  };
+
   return (
     <header className="header">
       <div className="header-top-line"></div>
@@ -34,11 +47,16 @@ export default function Header() {
           <NavLink to="/blog" className="nav-link">
             BLOG
           </NavLink>
-          <NavLink to="/contact" className="nav-link">
+          <a href="#" className="nav-link" onClick={handleContactClick}>
             CONTACT US
-          </NavLink>
+          </a>
         </div>
       </nav>
+
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={closeContactModal} 
+      />
     </header>
   );
 }

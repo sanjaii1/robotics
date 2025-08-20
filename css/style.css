@@ -1,0 +1,25 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
+}
+
+body {
+  font-family: "Inter", serif;
+  overflow-x: hidden !important;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  width: 100%;
+  max-width: 2000px;
+  margin: 0 auto;
+  background-color: #07374f;
+}
+
+/*# sourceMappingURL=style.css.map */

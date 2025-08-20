@@ -1,0 +1,14 @@
+@import './Components/BlogHeader';
+@import './Components/BlogGrid';
+@import './Components/BlogCard';
+@import './Components/Pagination';
+
+.blog-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  
+  @media (min-width: 768px) {
+    padding: 3rem 2rem;
+  }
+}

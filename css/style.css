@@ -1396,461 +1396,255 @@ a {
     font-size: 1.2rem;
   }
 }
-
-/* Products Section Styles */
-.products-section {
-  padding: 4rem 2rem;
-  background: #f8f9fa;
+.blog-header {
+  margin-bottom: 4rem;
+  text-align: center;
 }
-
-.navigation-buttons {
+.blog-header__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.blog-header__breadcrumb {
   display: flex;
+  align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+.blog-header__breadcrumb svg {
+  color: #6b7280;
+}
+.blog-header__title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+@media (max-width: 768px) {
+  .blog-header__title {
+    font-size: 2.25rem;
+  }
+}
+.blog-header__description {
+  font-size: 1.125rem;
+  color: #374151;
+  line-height: 1.6;
   margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
-.nav-button {
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 14px;
+.blog-header__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 640px) {
+  .blog-header__filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+.blog-header__filter-btn {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #3b82f6;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #3b82f6;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  transition: all 0.2s ease;
 }
-
-.nav-button.primary {
-  background: #0066cc;
+.blog-header__filter-btn:hover {
+  background: #3b82f6;
   color: white;
 }
-
-.nav-button.primary:hover {
-  background: #0052a3;
-  transform: translateY(-2px);
-}
-
-.nav-button.secondary {
-  background: white;
-  color: #0066cc;
-  border: 2px solid #0066cc;
-}
-
-.nav-button.secondary:hover {
-  background: #0066cc;
+.blog-header__filter-btn--active {
+  background: #3b82f6;
   color: white;
-  transform: translateY(-2px);
+}
+@media (max-width: 640px) {
+  .blog-header__filter-btn {
+    text-align: center;
+  }
 }
 
-.products-grid {
+.blog-grid {
+  margin-bottom: 4rem;
+}
+.blog-grid__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+}
+@media (min-width: 1024px) {
+  .blog-grid__container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .blog-grid__container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
 }
 
-.product-card {
+.blog-card {
   background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  position: relative;
+  border-radius: 1rem;
   overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-
-.product-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
-
-.category-tags {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-  flex-wrap: wrap;
-}
-
-.category-tag {
-  background: #0066cc;
-  color: white;
-  padding: 4px 12px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.product-image {
+.blog-card__image {
   width: 100%;
   height: 200px;
-  margin-bottom: 1.5rem;
-  border-radius: 8px;
   overflow: hidden;
 }
-
-.product-image img {
+.blog-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: transform 0.3s ease;
 }
-
-.product-card:hover .product-image img {
+.blog-card:hover .blog-card__image img {
   transform: scale(1.05);
 }
-
-.product-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 1rem;
-  line-height: 1.3;
+.blog-card__content {
+  padding: 1.5rem;
 }
-
-.product-description {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-size: 14px;
-}
-
-.key-highlights {
-  margin-bottom: 2rem;
-}
-
-.highlights-title {
-  font-size: 14px;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.75rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.highlights-list {
-  list-style: none;
-  padding: 0;
-}
-
-.highlight-item {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-  color: #555;
-  font-size: 14px;
-  line-height: 1.5;
-}
-
-.highlight-item::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 6px;
-  width: 8px;
-  height: 8px;
-  background: #0066cc;
-  border-radius: 50%;
-}
-
-.cta-button {
-  width: 100%;
-  background: #0066cc;
-  color: white;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.cta-button:hover {
-  background: #0052a3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
-}
-
-/* Responsive Design for Products */
-@media (max-width: 768px) {
-  .products-section {
-    padding: 2rem 1rem;
-  }
-  
-  .navigation-buttons {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .products-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-  
-  .product-card {
-    padding: 1rem;
-  }
-  
-  .product-title {
-    font-size: 1.25rem;
-  }
-}
-
-/* Robot Rentals Section Styles */
-.robot-rentals-section {
-  padding: 4rem 2rem;
-  background: white;
-}
-
-.rentals-header {
-  text-align: center;
-  margin-bottom: 3rem;
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.rentals-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #333;
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.rentals-subtitle {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 0;
-}
-
-.rentals-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Rental Button Styles */
-.cta-button.rental {
-  background: #0066cc;
-  color: white;
-}
-
-.cta-button.rental:hover {
-  background: #0052a3;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 102, 204, 0.3);
-}
-
-/* Responsive Design for Rentals */
-@media (max-width: 768px) {
-  .robot-rentals-section {
-    padding: 2rem 1rem;
-  }
-  
-  .rentals-title {
-    font-size: 2rem;
-  }
-  
-  .rentals-subtitle {
-    font-size: 1rem;
-  }
-  
-  .rentals-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-}
-
-/* Case Studies Section Styles */
-.case-studies-section {
+.blog-card__meta {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  min-height: 600px;
-  background: linear-gradient(90deg, #008080 0%, #00CED1 100%);
-  padding: 4rem 2rem;
-  position: relative;
+  margin-bottom: 1rem;
+}
+.blog-card__category {
+  background: #3b82f6;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.blog-card__date {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+.blog-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   overflow: hidden;
 }
-
-.case-studies-content {
-  flex: 1;
-  max-width: 600px;
-  color: white;
-  z-index: 2;
-  position: relative;
-}
-
-.case-studies-title {
-  font-size: 3rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
-  line-height: 1.1;
-  letter-spacing: 2px;
-}
-
-.case-studies-intro {
-  font-size: 1.2rem;
+.blog-card__description {
+  color: #6b7280;
   line-height: 1.6;
   margin-bottom: 1.5rem;
-  font-weight: 400;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
-
-.case-studies-body {
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  font-weight: 400;
-}
-
-.case-studies-conclusion {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  font-weight: 400;
-}
-
-.case-studies-cta {
-  background: white;
-  color: #0066cc;
-  border: none;
-  padding: 16px 32px;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: 600;
+.blog-card__read-more {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+.blog-card__read-more:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
 }
 
-.case-studies-cta:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  background: #f8f9fa;
-}
-
-.case-studies-graphic {
-  flex: 1;
+.pagination {
   display: flex;
-  justify-content: center;
   align-items: center;
-  position: relative;
-  z-index: 1;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.pagination__arrow {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #6b7280;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.pagination__arrow:hover:not(:disabled) {
+  border-color: #9ca3af;
+  background: #f9fafb;
+  color: #374151;
+}
+.pagination__arrow:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.pagination__arrow svg {
+  width: 16px;
+  height: 16px;
+}
+.pagination__pages {
+  display: flex;
+  gap: 0.25rem;
+}
+.pagination__page {
+  background: transparent;
+  border: 1px solid #d1d5db;
+  color: #374151;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 2.5rem;
+  text-align: center;
+}
+.pagination__page:hover {
+  border-color: #9ca3af;
+  background: #f9fafb;
+}
+.pagination__page--active {
+  background: #3b82f6;
+  border-color: #3b82f6;
+  color: white;
+}
+.pagination__page--active:hover {
+  background: #2563eb;
+  border-color: #2563eb;
 }
 
-.robotic-hand {
-  width: 400px;
-  height: 500px;
-  background: linear-gradient(135deg, #0066cc 0%, #0099ff 50%, #00ccff 100%);
-  border-radius: 50px;
-  position: relative;
-  box-shadow: 
-    0 20px 40px rgba(0, 102, 204, 0.3),
-    inset 0 10px 20px rgba(255, 255, 255, 0.2);
-  animation: roboticHandGlow 3s ease-in-out infinite alternate;
+.blog-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
-
-.robotic-hand::before {
-  content: '';
-  position: absolute;
-  top: 20%;
-  left: 20%;
-  width: 60%;
-  height: 60%;
-  background: linear-gradient(45deg, #004499 0%, #0066cc 50%, #0099ff 100%);
-  border-radius: 30px;
-  box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.robotic-hand::after {
-  content: '';
-  position: absolute;
-  top: 35%;
-  left: 25%;
-  width: 50%;
-  height: 40%;
-  background: linear-gradient(135deg, #00ccff 0%, #66ddff 100%);
-  border-radius: 25px;
-  box-shadow: 
-    inset 0 3px 10px rgba(255, 255, 255, 0.4),
-    0 5px 15px rgba(0, 204, 255, 0.5);
-}
-
-@keyframes roboticHandGlow {
-  0% {
-    box-shadow: 
-      0 20px 40px rgba(0, 102, 204, 0.3),
-      inset 0 10px 20px rgba(255, 255, 255, 0.2),
-      0 0 20px rgba(0, 204, 255, 0.3);
-  }
-  100% {
-    box-shadow: 
-      0 20px 40px rgba(0, 102, 204, 0.4),
-      inset 0 10px 20px rgba(255, 255, 255, 0.3),
-      0 0 30px rgba(0, 204, 255, 0.6);
-  }
-}
-
-/* Responsive Design for Case Studies */
-@media (max-width: 1024px) {
-  .case-studies-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 1rem;
-  }
-  
-  .case-studies-content {
-    max-width: 100%;
-    margin-bottom: 3rem;
-  }
-  
-  .case-studies-title {
-    font-size: 2.5rem;
-  }
-  
-  .robotic-hand {
-    width: 300px;
-    height: 375px;
-  }
-}
-
-@media (max-width: 768px) {
-  .case-studies-section {
-    padding: 2rem 1rem;
-  }
-  
-  .case-studies-title {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .case-studies-intro {
-    font-size: 1.1rem;
-  }
-  
-  .case-studies-body,
-  .case-studies-conclusion {
-    font-size: 0.95rem;
-  }
-  
-  .robotic-hand {
-    width: 250px;
-    height: 312px;
+@media (min-width: 768px) {
+  .blog-page {
+    padding: 3rem 2rem;
   }
 }
 

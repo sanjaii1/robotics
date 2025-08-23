@@ -20,10 +20,7 @@ export default function Header() {
       <nav className="nav-container">
         <div className="logo-section">
           <div className="logo">
-            <div className="logo-symbol">
-              <div className="logo-line"></div>
-              <div className="logo-line"></div>
-            </div>
+
             <div className="company-name">
               <span className="fortune">FORTUNE</span>
               <span className="robotics">ROBOTICS</span>

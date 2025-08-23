@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer__main">
         <div className="footer__column">
           <div className="footer__logo">
-            <div className="footer__logo-icon">חף</div>
+            
             <div className="footer__logo-text">
               <span className="footer__logo-fortune">FORTUNE</span>
               <span className="footer__logo-robotics">ROBOTICS</span>
